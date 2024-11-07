@@ -38,7 +38,8 @@ jobs:
       # Step 5: Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t myreact .
+          cd frontend  # Navigate to the frontend directory
+          docker build -t myreact .  # Build the Docker image in the frontend directory
 
       # Step 6: Log in to AWS ECR
       - name: Login to AWS ECR
@@ -54,4 +55,3 @@ jobs:
       - name: Push Docker Image to ECR
         run: |
           docker push 061051224547.dkr.ecr.us-east-1.amazonaws.com/myreact:latest
-
