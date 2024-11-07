@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest  # Use the latest Ubuntu environment
-run-name: 
+
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
@@ -53,5 +53,3 @@ run-name:
       - name: Push Docker Image to ECR
         run: |
           docker push 061051224547.dkr.ecr.us-east-1.amazonaws.com/myreact:latest
-
-      
